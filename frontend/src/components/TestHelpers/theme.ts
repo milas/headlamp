@@ -1,5 +1,5 @@
-import { createTheme } from '@material-ui/core';
-import { green, grey, orange, red } from '@material-ui/core/colors';
+import { adaptV4Theme, createTheme } from '@mui/material';
+import { green, grey, orange, red } from '@mui/material/colors';
 
 const commonRules = {
   palette: {
@@ -70,4 +70,4 @@ const commonRules = {
   },
 };
 
-export const theme = createTheme(commonRules);
+export const theme = createTheme(adaptV4Theme(commonRules));

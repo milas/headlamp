@@ -1,4 +1,4 @@
-import { Button, Snackbar } from '@material-ui/core';
+import { Button, Snackbar } from '@mui/material';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 

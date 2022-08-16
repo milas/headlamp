@@ -1,7 +1,7 @@
-import Box from '@material-ui/core/Box';
-import DialogContent from '@material-ui/core/DialogContent';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
+import DialogContent from '@mui/material/DialogContent';
+import Grid from '@mui/material/Grid';
+import makeStyles from '@mui/styles/makeStyles';
 import Ansi from 'ansi-to-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';

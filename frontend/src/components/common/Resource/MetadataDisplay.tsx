@@ -1,8 +1,8 @@
 import { Icon } from '@iconify/react';
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography, { TypographyProps } from '@material-ui/core/Typography';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import Typography, { TypographyProps } from '@mui/material/Typography';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResourceClasses } from '../../../lib/k8s';
@@ -155,7 +155,7 @@ export function MetadataDictGrid(props: MetadataDictGridProps) {
     // If the full label is not being shown, use a tooltip to show the full text
     // to the user (so they select it, etc.).
     if (fullText.length !== shortText.length) {
-      labelComponent = <LightTooltip title={fullText} children={labelComponent} interactive />;
+      labelComponent = <LightTooltip title={fullText} children={labelComponent} />;
     }
     return labelComponent;
   }

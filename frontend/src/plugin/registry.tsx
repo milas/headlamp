@@ -250,7 +250,7 @@ export function registerDetailsViewHeaderAction(headerAction: DetailsViewHeaderA
  *
  * ```tsx
  * import { registerAppBarAction } from '@kinvolk/headlamp-plugin/lib';
- * import { Button } from '@material-ui/core';
+ * import { Button } from '@mui/material';
  *
  * function ConsoleLogger() {
  *   return (

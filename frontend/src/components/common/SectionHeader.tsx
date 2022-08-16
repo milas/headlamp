@@ -1,7 +1,6 @@
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import { Variant } from '@material-ui/core/styles/createTypography';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
 type HeaderStyle = 'main' | 'subsection' | 'normal' | 'label';
@@ -10,6 +9,13 @@ export interface HeaderStyleProps {
   noPadding?: boolean;
   headerStyle?: HeaderStyle;
 }
+type headers = 'h1' | 'h2' | 'h3' | 'h4';
+const titleVariants: { [key: string]: headers } = {
+  main: 'h1',
+  subsection: 'h2',
+  normal: 'h3',
+  label: 'h4',
+};
 
 const useStyles = makeStyles(theme => ({
   sectionHeader: ({ noPadding }: HeaderStyleProps) => ({
@@ -34,12 +40,6 @@ export default function SectionHeader(props: SectionHeaderProps) {
   const { noPadding = false, headerStyle = 'main' } = props;
   const classes = useStyles({ noPadding, headerStyle });
   const actions = props.actions || [];
-  const titleVariants: { [key: string]: Variant } = {
-    main: 'h1',
-    subsection: 'h2',
-    normal: 'h3',
-    label: 'h4',
-  };
 
   return (
     <Grid

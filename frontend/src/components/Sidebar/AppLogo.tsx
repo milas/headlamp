@@ -1,4 +1,4 @@
-import { SvgIcon } from '@material-ui/core';
+import { SvgIcon } from '@mui/material';
 import { ReactElement } from 'react';
 import { ReactComponent as LogoLight } from '../../resources/icon-light.svg';
 import { ReactComponent as LogoWithTextLight } from '../../resources/logo-light.svg';

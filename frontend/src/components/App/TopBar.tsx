@@ -1,13 +1,15 @@
 import { Icon } from '@iconify/react';
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { Theme, useTheme } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -111,7 +113,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     toolbar: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         paddingLeft: 0,
       },
     },
@@ -196,7 +198,7 @@ export function PureTopBar({
 }: PureTopBarProps) {
   const { t } = useTranslation('frequent');
   const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmall = useMediaQuery(theme.breakpoints.down('md'));
   const dispatch = useDispatch();
 
   const openSideBar = !!(isSidebarOpenUserSelected === undefined ? false : isSidebarOpen);
@@ -302,6 +304,7 @@ export function PureTopBar({
           aria-haspopup="true"
           color="inherit"
           onClick={handleProfileMenuOpen}
+          size="large"
         >
           <Icon icon="mdi:account" />
         </IconButton>
@@ -337,6 +340,7 @@ export function PureTopBar({
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
                 color="inherit"
+                size="large"
               >
                 <Icon icon="mdi:account" />
               </IconButton>
@@ -351,6 +355,7 @@ export function PureTopBar({
                 aria-haspopup="true"
                 onClick={handleMobileMenuOpen}
                 color="inherit"
+                size="large"
               >
                 <Icon icon="mdi:more-vert" />
               </IconButton>

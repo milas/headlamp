@@ -1,4 +1,4 @@
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Workload } from '../../lib/k8s/cluster';

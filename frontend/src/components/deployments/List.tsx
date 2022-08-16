@@ -1,4 +1,4 @@
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Deployment from '../../lib/k8s/deployment';
 import { StatusLabel } from '../common';

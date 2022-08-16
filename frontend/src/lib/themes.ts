@@ -1,12 +1,14 @@
-import green from '@material-ui/core/colors/green';
-import grey from '@material-ui/core/colors/grey';
-import orange from '@material-ui/core/colors/orange';
-import red from '@material-ui/core/colors/red';
-import { createTheme, Theme } from '@material-ui/core/styles';
-import { PaletteColor, PaletteColorOptions } from '@material-ui/core/styles/createPalette';
+import { green, grey, orange, red } from '@mui/material/colors';
+import {
+  adaptV4Theme,
+  createTheme,
+  PaletteColor,
+  PaletteColorOptions,
+  Theme,
+} from '@mui/material/styles';
 import React from 'react';
 
-declare module '@material-ui/core/styles/createPalette.d' {
+declare module '@mui/material/styles/createPalette.d' {
   interface Palette {
     success: PaletteColor;
     sidebarLink: {
@@ -93,48 +95,50 @@ const commonRules = {
   },
 };
 
-const lightTheme = createTheme(commonRules);
+const lightTheme = createTheme(adaptV4Theme(commonRules));
 
-const darkTheme = createTheme({
-  ...commonRules,
-  palette: {
-    ...commonRules.palette,
-    tables: {
-      headerText: '#aeaeae',
+const darkTheme = createTheme(
+  adaptV4Theme({
+    ...commonRules,
+    palette: {
+      ...commonRules.palette,
+      tables: {
+        headerText: '#aeaeae',
+      },
+      primary: {
+        contrastText: '#fff',
+        main: '#6CB6F2',
+      },
+      primaryColor: '#fff',
+      chartStyles: {
+        defaultFillColor: 'rgba(20, 20, 20, 0.1)',
+        fillColor: '#3DA3F5',
+        labelColor: '#fff',
+      },
+      success: {
+        light: green['800'],
+        main: green['50'],
+        ...green,
+      },
+      warning: {
+        main: 'rgb(255 181 104)', // orange
+        light: 'rgba(255, 152, 0, 0.15)',
+        ...orange,
+      },
+      error: {
+        main: red['800'],
+        light: 'rgba(244, 67, 54, 0.2)',
+      },
+      normalEventBg: '#333333',
+      metadataBgColor: '#333',
+      resourceToolTip: {
+        color: 'rgba(255, 255, 255, 0.87)',
+      },
+      notificationBorderColor: 'rgba(255,255,255,0.12)',
+      type: 'dark',
     },
-    primary: {
-      contrastText: '#fff',
-      main: '#6CB6F2',
-    },
-    primaryColor: '#fff',
-    chartStyles: {
-      defaultFillColor: 'rgba(20, 20, 20, 0.1)',
-      fillColor: '#3DA3F5',
-      labelColor: '#fff',
-    },
-    success: {
-      light: green['800'],
-      main: green['50'],
-      ...green,
-    },
-    warning: {
-      main: 'rgb(255 181 104)', // orange
-      light: 'rgba(255, 152, 0, 0.15)',
-      ...orange,
-    },
-    error: {
-      main: red['800'],
-      light: 'rgba(244, 67, 54, 0.2)',
-    },
-    normalEventBg: '#333333',
-    metadataBgColor: '#333',
-    resourceToolTip: {
-      color: 'rgba(255, 255, 255, 0.87)',
-    },
-    notificationBorderColor: 'rgba(255,255,255,0.12)',
-    type: 'dark',
-  },
-});
+  })
+);
 
 export interface ThemesConf {
   [themeName: string]: Theme;

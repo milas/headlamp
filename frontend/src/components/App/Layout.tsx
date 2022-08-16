@@ -1,8 +1,8 @@
-import { Box } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import { Box } from '@mui/material';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Link from '@mui/material/Link';
+import makeStyles from '@mui/styles/makeStyles';
 import { useTranslation } from 'react-i18next';
 import { useTypedSelector } from '../../redux/reducers/reducers';
 import ActionsNotifier from '../common/ActionsNotifier';
@@ -22,7 +22,7 @@ const useStyle = makeStyles(theme => ({
   },
   toolbar: theme.mixins.toolbar,
   // importing visuallyHidden has typing issues at time of writing.
-  // import { visuallyHidden } from '@material-ui/utils';
+  // import { visuallyHidden } from '@mui/utils';
   visuallyHidden: {
     border: 0,
     clip: 'rect(0 0 0 0)',
@@ -36,7 +36,7 @@ const useStyle = makeStyles(theme => ({
   },
   wrapper: {
     display: 'flex',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'block',
     },
   },

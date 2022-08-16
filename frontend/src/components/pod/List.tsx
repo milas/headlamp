@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import _ from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { ApiError } from '../../lib/k8s/apiProxy';
@@ -29,7 +29,7 @@ export function makePodStatusLabel(pod: Pod) {
   }
 
   return (
-    <LightTooltip title={tooltip} interactive>
+    <LightTooltip title={tooltip}>
       <Box display="inline">
         <StatusLabel status={status}>
           {phase}

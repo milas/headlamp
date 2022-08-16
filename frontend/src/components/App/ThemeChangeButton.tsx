@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@mui/material/IconButton';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -34,7 +34,7 @@ export default function ThemeChangeButton() {
   }
 
   return (
-    <IconButton aria-label={t('Change theme')} onClick={() => changeTheme()}>
+    <IconButton aria-label={t('Change theme')} onClick={() => changeTheme()} size="large">
       <Icon icon={icon} />
     </IconButton>
   );

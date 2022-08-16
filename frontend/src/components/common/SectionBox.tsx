@@ -1,5 +1,5 @@
-import Box, { BoxProps } from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
+import Box, { BoxProps } from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import React from 'react';
 import SectionHeader, { SectionHeaderProps } from './SectionHeader';
 

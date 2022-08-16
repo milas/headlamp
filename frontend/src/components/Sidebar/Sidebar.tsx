@@ -1,9 +1,9 @@
-import Box from '@material-ui/core/Box';
-import Drawer from '@material-ui/core/Drawer';
-import Grid from '@material-ui/core/Grid';
-import List from '@material-ui/core/List';
-import { makeStyles } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Grid from '@mui/material/Grid';
+import List from '@mui/material/List';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import makeStyles from '@mui/styles/makeStyles';
 import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -42,10 +42,10 @@ const useStyle = makeStyles(theme => ({
     }),
     overflowX: 'hidden',
     width: theme.spacing(7) + 1,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       background: 'initial',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: theme.spacing(0),
     },
     [theme.breakpoints.up('sm')]: {
@@ -208,6 +208,9 @@ export function PureSidebar({
           }),
         }}
         PaperProps={{
+          // mui5 has a typing issue with component
+          // https://github.com/mui/material-ui/issues/27703#issuecomment-1216805439
+          // @ts-ignore
           component: 'nav',
         }}
         open={temporarySideBarOpen}
@@ -232,6 +235,9 @@ export function PureSidebar({
         }),
       }}
       PaperProps={{
+        // mui5 has a typing issue with component
+        // https://github.com/mui/material-ui/issues/27703#issuecomment-1216805439
+        // @ts-ignore
         component: 'nav',
       }}
     >

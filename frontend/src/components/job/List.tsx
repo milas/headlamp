@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Job from '../../lib/k8s/job';
 import { LightTooltip, StatusLabel, StatusLabelProps } from '../common';
@@ -36,7 +36,7 @@ export function makePodStatusLabel(job: Job) {
   const conditionInfo = conditionOptions[(condition.type as 'Complete' | 'Failed') || 'Suspended'];
 
   return (
-    <LightTooltip title={tooltip} interactive>
+    <LightTooltip title={tooltip}>
       <Box display="inline">
         <StatusLabel status={conditionInfo.status as StatusLabelProps['status']}>
           {condition.type}

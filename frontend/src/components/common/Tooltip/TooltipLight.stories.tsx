@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@mui/material/IconButton';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import i18next from 'i18next';
 import React from 'react';
@@ -16,7 +16,7 @@ export const Add = Template.bind({});
 Add.args = {
   title: 'Add',
   children: (
-    <IconButton aria-label={i18next.t('frequent|Add')}>
+    <IconButton aria-label={i18next.t('frequent|Add')} size="large">
       <Icon color="#adadad" icon="mdi:plus-circle" width="48" />
     </IconButton>
   ),

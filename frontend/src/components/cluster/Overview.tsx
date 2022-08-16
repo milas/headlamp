@@ -1,6 +1,6 @@
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -120,7 +120,7 @@ function EventsSection() {
           {
             label: t('Reason'),
             getter: event => (
-              <LightTooltip title={event.message} interactive>
+              <LightTooltip title={event.message}>
                 <Box>{makeStatusLabel(event)}</Box>
               </LightTooltip>
             ),

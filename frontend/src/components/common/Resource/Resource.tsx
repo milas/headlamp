@@ -1,14 +1,14 @@
 import { Icon } from '@iconify/react';
-import { Button, InputLabel, Theme } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import Divider from '@material-ui/core/Divider';
-import Grid, { GridProps } from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import Input, { InputProps } from '@material-ui/core/Input';
-import { TextFieldProps } from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/styles';
 import Editor from '@monaco-editor/react';
+import { Button, InputLabel, Theme } from '@mui/material';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Grid, { GridProps } from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import Input, { InputProps } from '@mui/material/Input';
+import { TextFieldProps } from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { makeStyles, useTheme } from '@mui/styles';
 import { Base64 } from 'js-base64';
 import _ from 'lodash';
 import * as monaco from 'monaco-editor';
@@ -332,6 +332,7 @@ export function SecretField(props: InputProps) {
           aria-label={t('toggle field visibility')}
           onClick={handleClickShowPassword}
           onMouseDown={event => event.preventDefault()}
+          size="large"
         >
           <Icon icon={showPassword ? 'mdi:eye-off' : 'mdi:eye'} />
         </IconButton>
@@ -342,7 +343,9 @@ export function SecretField(props: InputProps) {
           type="password"
           fullWidth
           multiline={showPassword}
-          rowsMax="20"
+          inputProps={{
+            rowsMax: '20',
+          }}
           value={showPassword ? Base64.decode(value as string) : '******'}
           {...other}
         />
@@ -543,7 +546,7 @@ export function ContainerInfo(props: ContainerInfoProps) {
           {label + (state?.reason ? ` (${state.reason})` : '')}
         </StatusLabel>
         {!!state && state.message && (
-          <LightTooltip role="tooltip" title={state.message} interactive id={tooltipID}>
+          <LightTooltip role="tooltip" title={state.message} id={tooltipID}>
             <Box aria-label="hidden" display="inline" px={1} style={{ verticalAlign: 'bottom' }}>
               <Icon icon="mdi:alert-outline" width="1.3rem" height="1.3rem" aria-label="hidden" />
             </Box>

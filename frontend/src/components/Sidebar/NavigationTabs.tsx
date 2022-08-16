@@ -1,7 +1,8 @@
-import { Divider } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Divider } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import makeStyles from '@mui/styles/makeStyles';
 import { useTranslation } from 'react-i18next';
 import { generatePath, useHistory } from 'react-router';
 import { createRouteURL } from '../../lib/router';
@@ -51,7 +52,7 @@ export default function NavigationTabs() {
   const classes = useStyle();
   const sidebar = useTypedSelector(state => state.ui.sidebar);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isSmallSideBar = useMediaQuery(theme.breakpoints.only('sm'));
   const { t } = useTranslation();
 

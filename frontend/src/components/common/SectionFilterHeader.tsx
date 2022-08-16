@@ -1,9 +1,9 @@
 import { Icon } from '@iconify/react';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import TextField from '@material-ui/core/TextField';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
 import React from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { useTranslation } from 'react-i18next';
@@ -85,7 +85,11 @@ export default function SectionFilterHeader(props: SectionFilterHeaderProps) {
 
   if (!showFilters) {
     actions.push(
-      <IconButton aria-label={t('Show filter')} onClick={() => setShowFilters(!showFilters)}>
+      <IconButton
+        aria-label={t('Show filter')}
+        onClick={() => setShowFilters(!showFilters)}
+        size="large"
+      >
         <Icon icon="mdi:filter-variant" />
       </IconButton>
     );

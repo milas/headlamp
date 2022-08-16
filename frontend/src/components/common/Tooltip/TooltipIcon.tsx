@@ -1,6 +1,6 @@
 import { Icon, IconProps } from '@iconify/react';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
+import Container from '@mui/material/Container';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import TooltipLight from './TooltipLight';
 
@@ -30,7 +30,7 @@ export default function TooltipIcon(props: TooltipIconProps) {
   const { children, icon = 'mdi:information-outline' } = props;
 
   return (
-    <TooltipLight title={children} interactive>
+    <TooltipLight title={children}>
       <IconReffed icon={icon} />
     </TooltipLight>
   );
