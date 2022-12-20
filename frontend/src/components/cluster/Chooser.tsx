@@ -404,10 +404,6 @@ function Chooser(props: ClusterDialogProps) {
         aria-busy={clusterList.length === 0 && clusters === null}
         {...otherProps}
       >
-        <DialogTitle id="chooser-dialog-title" focusTitle>
-          {t('Choose a cluster')}
-        </DialogTitle>
-
         {clusterList.length === 0 ? (
           <React.Fragment>
             {clusters === null ? (
@@ -416,23 +412,39 @@ function Chooser(props: ClusterDialogProps) {
                 <Loader title={t('Loading cluster information')} />
               </>
             ) : (
-              <>
-                <DialogContentText>
-                  {t('There seems to be no clusters configured…')}
-                </DialogContentText>
-                <DialogContentText>
-                  {t('Please make sure you have at least one cluster configured.')}
-                </DialogContentText>
-                {helpers.isElectron() && (
-                  <DialogContentText>
-                    {t('Or try running Headlamp with a different kube config.')}
-                  </DialogContentText>
+              <React.Fragment>
+                {helpers.isDockerDesktop() ? (
+                  <>
+                    <DialogContentText>
+                      {' '}
+                      {t('Setup Docker Desktop Kubernetes cluster to continue.')}
+                    </DialogContentText>
+                  </>
+                ) : (
+                  <React.Fragment>
+                    <DialogContentText>
+                      {t('There seems to be no clusters configured…')}
+                    </DialogContentText>
+                    <DialogContentText>
+                      {t('Please make sure you have at least one cluster configured.')}
+                    </DialogContentText>
+                    {helpers.isElectron() && (
+                      <DialogContentText>
+                        {t('Or try running Headlamp with a different kube config.')}
+                      </DialogContentText>
+                    )}
+                  </React.Fragment>
                 )}
-              </>
+              </React.Fragment>
             )}
           </React.Fragment>
         ) : (
-          <ClusterList clusters={clusterList} onButtonClick={handleButtonClick} />
+          <React.Fragment>
+            <DialogTitle id="chooser-dialog-title" focusTitle>
+              {t('Choose a cluster')}
+            </DialogTitle>
+            <ClusterList clusters={clusterList} onButtonClick={handleButtonClick} />
+          </React.Fragment>
         )}
         {children}
       </ClusterDialog>
