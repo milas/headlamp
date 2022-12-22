@@ -62,5 +62,12 @@ COPY --from=frontend /headlamp/plugins /headlamp/plugins
 # renamed it as "headlamp-server".
 RUN cd /headlamp && ln -s ./headlamp-server ./server
 
+RUN addgroup -S headlamp && adduser -S headlamp -G headlamp
+RUN chown -R headlamp:headlamp /headlamp
+USER headlamp
+
+
 EXPOSE 4466
+
+
 ENTRYPOINT ["/headlamp/headlamp-server", "-html-static-dir", "/headlamp/frontend"]
