@@ -8,6 +8,7 @@
     "paths": {
       "*": [
         "node_modules/*.js",
+        "node_modules/*/es/index.js",
         "node_modules/*/es6/index.js",
         "node_modules/*/index.js",
         "node_modules/@types/*",
