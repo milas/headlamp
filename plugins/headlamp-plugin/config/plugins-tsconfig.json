@@ -18,6 +18,9 @@
       "@iconify/react": [
         "node_modules/@kinvolk/headlamp-plugin/node_modules/@iconify/react/src/icon.js"
       ],
+      "@kinvolk/headlamp-plugin/lib/Crd": [
+        "node_modules/@kinvolk/headlamp-plugin/lib/lib/crd.d.ts"
+      ],
       "@kinvolk/headlamp-plugin/lib/K8s/*": [
         "node_modules/@kinvolk/headlamp-plugin/lib/lib/k8s/*/index.d.ts",
         "node_modules/@kinvolk/headlamp-plugin/lib/lib/k8s/*.d.ts"
