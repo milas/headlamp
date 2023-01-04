@@ -7,11 +7,10 @@
     "baseUrl": "../../../../",
     "paths": {
       "*": [
-
-        "node_modules/*",
+        "node_modules/*.js",
         "node_modules/@types/*",
         "node_modules/@kinvolk/headlamp-plugin/node_modules/*",
-        "node_modules/@kinvolk/headlamp-plugin/node_modules/@types/*"
+        "node_modules/@kinvolk/headlamp-plugin/node_modules/*/index.js"
       ],
       "@iconify/react": [
         "node_modules/@kinvolk/headlamp-plugin/node_modules/@iconify/react/src/icon.js"
