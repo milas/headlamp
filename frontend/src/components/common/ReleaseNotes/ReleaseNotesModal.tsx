@@ -1,7 +1,7 @@
 import 'github-markdown-css';
 import { Icon } from '@iconify/react';
 import { Backdrop, Box, Button, Modal, Paper, Typography } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
@@ -11,8 +11,14 @@ interface ReleaseNotesModalProps {
   releaseNotes: string;
 }
 
+const useStyles = makeStyles(() => ({
+  markdownStyle: {
+    color: '#fff',
+  },
+}));
 export default function ReleaseNotesModal(props: ReleaseNotesModalProps) {
   const { releaseNotes } = props;
+  const classes = useStyles();
   const [showReleaseNotes, setShowReleaseNotes] = React.useState(Boolean(releaseNotes));
   const theme = useTheme();
   const { t } = useTranslation('frequent');
@@ -50,7 +56,7 @@ export default function ReleaseNotesModal(props: ReleaseNotesModalProps) {
           className="markdown-body"
           style={{ color: theme.palette.text.primary, fontFamily: 'inherit' }}
         >
-          <ReactMarkdown>{releaseNotes}</ReactMarkdown>
+          <ReactMarkdown className={classes.markdownStyle}>{releaseNotes}</ReactMarkdown>
         </Box>
       </Paper>
     </Modal>
